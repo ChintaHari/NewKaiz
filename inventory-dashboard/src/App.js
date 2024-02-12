@@ -44,7 +44,7 @@ function App() {
             <Route path="/password-reset/:uid/:token" element={<PasswordReset />} />
             <Route path="/password-reset-confirm/:uidb64/:token" element={<PasswordResetConfirm />} /> */}
             <Route path="/password-reset-request" element={<PasswordResetRequest />} />
-            <Route path="/password-reset-confirm//:uidString" element={<PasswordResetConfirm />} />
+            <Route path="/password-reset-confirm/:uid/:token" element={<PasswordResetConfirm />} />
             {/* <Route path="*" element={<PasswordResetRequest />} /> */}
          
 

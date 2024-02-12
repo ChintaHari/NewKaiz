@@ -118,19 +118,19 @@ import { TextField, Button, Container } from '@mui/material';
 
 const PasswordResetConfirm = () => {
     const [newPassword, setNewPassword] = useState('');
-    const { uidString } = useParams();
-    console.log(uidString)
+    const { uid, token } = useParams();
+    // console.log(uidString)
     // const { uidb64, token } = useParams();
-    const [uidb64, token] = uidString.split('-')
-    console.log({ uidb64, token });
+    // const [uidb64, token] = uidString.split('-')
+    //console.log({ uidb64, token });
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log('Confirmatory data:', { uidb64, token, newPassword }) 
+        console.log('Confirmatory data:', { uid, token, newPassword }) 
         try {
             const response = await axios.post('http://localhost:8000/password-reset-confirm/', {
-                uid: uidb64,
+                uid: uid,
                 token,
                 new_password: newPassword,
             });
